@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
  Copyright (C) 2009 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,7 +14,7 @@
      limitations under the License.
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.android.inputmethod.pinyin" >
+    package="com.android.inputmethod.pinyin">
 
     <original-package android:name="com.android.inputmethod.pinyin" />
 
@@ -28,23 +27,34 @@
     <application
         android:icon="@drawable/app_icon"
         android:label="@string/ime_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
         <activity
-            android:name="com.luooh.inputmethod.pinyin.activitys.SetupWizardActivity"
+            android:name="com.luooh.inputmethod.pinyin.activitys.SplashActivity"
             android:clearTaskOnLaunch="true"
             android:label="@string/ime_name"
             android:launchMode="singleTop"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:theme="@style/AppTheme.AppStartLoad">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="com.luooh.inputmethod.pinyin.activitys.SetupWizardActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.luooh.inputmethod.pinyin.activitys.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+
         <activity
             android:name="com.luooh.inputmethod.pinyin.activitys.SettingsActivity"
-            android:label="@string/ime_settings_activity_name" >
+            android:label="@string/ime_settings_activity_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
@@ -52,7 +62,7 @@
 
         <service
             android:name="com.luooh.inputmethod.pinyin.PinyinDecoderService"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.android.inputmethod.pinyin.Decoder_Service" />
 
@@ -62,7 +72,7 @@
         <service
             android:name="com.luooh.inputmethod.pinyin.PinyinIME"
             android:label="@string/ime_name"
-            android:permission="android.permission.BIND_INPUT_METHOD" >
+            android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
                 <action android:name="android.view.InputMethod" />
             </intent-filter>
@@ -72,8 +82,6 @@
                 android:resource="@xml/method" />
         </service>
 
-        <activity android:name="com.luooh.inputmethod.pinyin.activitys.MainActivity" >
-        </activity>
     </application>
 
 </manifest>

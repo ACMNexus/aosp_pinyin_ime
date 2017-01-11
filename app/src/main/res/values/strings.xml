@@ -45,6 +45,7 @@
     <string name="setting_switch_key">setting_switch_key</string>
     <string name="setting_advanced_key">setting_advanced_key</string>
     <string name="active_inputmethod_tips">请先激活输入法，再切换输入法</string>
+    <string name="inputmethod_success">欢迎使用输入法</string>
     <string name="inputmethod_not_switch">请切换输入法为当前输入法</string>
     <string name="inputmethod_not_active">您当前未激活输入法请先激活；然后在切换到当前输入法</string>
 

@@ -1,9 +1,11 @@
 package com.luooh.inputmethod.pinyin.activitys;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 
@@ -13,11 +15,13 @@ import android.widget.AdapterView;
 public class BaseActivity extends AppCompatActivity implements View.OnClickListener, AbsListView.OnItemClickListener {
 
     protected Activity mActivity;
+    protected InputMethodManager mIm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.mActivity = this;
+        mIm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
     }
 
     @Override

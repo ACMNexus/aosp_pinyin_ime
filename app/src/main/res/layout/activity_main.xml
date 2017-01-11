@@ -14,6 +14,7 @@
         android:layout_marginRight="10dip"
         android:layout_marginTop="10dip"
         android:gravity="center"
+        android:text="@string/inputmethod_success"
         android:textColor="@color/balloon_color"
         android:textSize="20sp" />
 

@@ -21,11 +21,11 @@ public class MainActivity extends BaseActivity {
         mInputManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 
         if(!InputMethodUtils.isThisImeEnabled(this, mInputManager)) {
-            mInputState.setText(R.string.inputmethod_not_switch);
+            mInputState.setText(R.string.inputmethod_not_active);
         }
 
         if(!InputMethodUtils.isThisImeCurrent(this, mInputManager)) {
-            mInputState.setText(R.string.inputmethod_not_active);
+            mInputState.setText(R.string.inputmethod_not_switch);
         }
 
     }
