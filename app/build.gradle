@@ -1,0 +1,47 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    signingConfigs {
+        signConfig {
+            storeFile file("../keystore.jks")
+            storePassword "PinYin"
+            keyAlias "QiRui"
+            keyPassword "PinYin"
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.luooh.pinyin"
+        minSdkVersion 14
+        targetSdkVersion 23
+
+        ndk {
+            abiFilters "armeabi"
+        }
+    }
+
+    aaptOptions {
+        noCompress "dat"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.signConfig
+            buildConfigField("Boolean", "DEBUG_MODE", "false");
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+        debug {
+            signingConfig signingConfigs.signConfig
+            buildConfigField("Boolean", "DEBUG_MODE", "true");
+        }
+    }
+}
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.0.1'
+}
